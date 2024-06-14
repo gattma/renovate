@@ -3,5 +3,6 @@ module.exports = {
     platform: 'github',
     repositories: [
         "Gepardec/mega-backend"
-    ]
+    ],
+    "baseBranches": ["renovate"]
 }
