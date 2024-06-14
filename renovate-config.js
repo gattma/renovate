@@ -6,9 +6,10 @@ module.exports = {
     ],
     prHourlyLimit: 0,
     postUpgradeTasks: {
-        commands: ["ls -l"],
-        fileFilters: ["**/*.txt"],
+        commands: ["./mvnw quarkus:update"],
+        fileFilters: ["**/*.pom", "**/*.java"],
         executionMode: "branch"
     },
-    allowedPostUpgradeCommands: ["touch", "ls"]
+    allowedPostUpgradeCommands: ["touch", "ls", "^./mvnw quarkus:update$"],
+    recreateWhen: "always"
 }
