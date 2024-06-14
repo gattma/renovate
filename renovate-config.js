@@ -2,7 +2,13 @@ module.exports = {
     gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
     platform: 'github',
     repositories: [
-        "Gepardec/mega-backend"
+        "Gepardec/renovate-playground"
     ],
-    "baseBranches": ["renovate-dev"]
+    prHourlyLimit: 0,
+    postUpgradeTasks: {
+        commands: ["ls -l"],
+        fileFilters: ["**/*.txt"],
+        executionMode: "branch"
+    },
+    allowedPostUpgradeCommands: ["touch", "ls"]
 }
