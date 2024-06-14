@@ -4,5 +4,5 @@ module.exports = {
     repositories: [
         "Gepardec/mega-backend"
     ],
-    "baseBranches": ["renovate"]
+    "baseBranches": ["renovate-dev"]
 }
