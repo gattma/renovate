@@ -12,5 +12,5 @@ echo $
 
 if [ "$branchName" = "renovate/major-quarkus.platform.version" ]; then
   echo "Branch: $branchName; Old version: $oldVersion; New MajorMinorVersion: $newMajorMinor"
-  /tmp/renovate/repos/$platform/$repository/mvnw -f /tmp/renovate/repos/$platform/$repository/pom.xml quarkus:update -Dquarkus.platform.version=$oldVersion -Dstream=$newMajorMinor
+  /tmp/renovate/repos/$platform/$repository/mvnw -f /tmp/renovate/repos/$platform/$repository/pom.xml io.quarkus.platform:quarkus-maven-plugin:$newVersion:update
 fi
