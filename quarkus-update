@@ -4,9 +4,9 @@ branchName=$1
 oldVersion=$2
 newVersion=$3
 newMajorMinor=$4
-$platform=$5
-$sourceRepoOrg=$6
-$sourceRepoName=$7
+platform=$5
+sourceRepoOrg=$6
+sourceRepoName=$7
 
 echo $
 
