@@ -6,10 +6,10 @@ module.exports = {
     ],
     prHourlyLimit: 0,
     postUpgradeTasks: {
-        commands: ["./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}}"],
+        commands: ["/github-action/quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}} {{platform}} {{sourceRepoOrg}} {{sourceRepoName}}"],
         fileFilters: ["**/*", "**/.*"]
     },
     allowedPostUpgradeCommands: [
-        "^./quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}}$"
+        "^/github-action/quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}} {{platform}} {{sourceRepoOrg}} {{sourceRepoName}}$"
     ]
 }
