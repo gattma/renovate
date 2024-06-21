@@ -24,6 +24,5 @@ jobs:
           configurationFile: renovate-config.js
           docker-volumes: |
             /home/runner/work/renovate/renovate/quarkus-update:/github-action/quarkus-update
-            /home/runner/work/renovate/renovate/angular-update:/github-action/angular-update
         env:
           LOG_LEVEL: debug
