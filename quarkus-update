@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 branchName=$1
 currentVersion=$2
@@ -10,7 +11,7 @@ repository=$6
 
 echo $
 
-if [ "$branchName" =~ "^renovate/.*quarkus.platform.version$" ]; then
+if [[ "$branchName" =~ renovate/.*quarkus.platform.version ]]; then
   echo "Branch: $branchName; Old version: $oldVersion; New MajorMinorVersion: $newMajorMinor"
   mvn versions:set-property -Dproperty=quarkus.platform.version -DnewVersion=$currentVersion
   /tmp/renovate/repos/$platform/$repository/mvnw -f /tmp/renovate/repos/$platform/$repository/pom.xml io.quarkus.platform:quarkus-maven-plugin:$newVersion:update
