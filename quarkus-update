@@ -10,7 +10,7 @@ repository=$6
 
 echo $
 
-if [ "$branchName" = "renovate/quarkus.platform.version" ]; then
+if [ "$branchName" = "renovate/major-quarkus.platform.version" ]; then
   echo "Branch: $branchName; Old version: $oldVersion; New MajorMinorVersion: $newMajorMinor"
   /tmp/renovate/repos/$platform/$repository/mvnw -f /tmp/renovate/repos/$platform/$repository/pom.xml quarkus:update -Dquarkus.platform.version=$oldVersion -Dstream=$newMajorMinor
 fi
