@@ -11,5 +11,6 @@ module.exports = {
     },
     allowedPostUpgradeCommands: [
         "^/github-action/quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}} {{platform}} {{repository}}$"
-    ]
+    ],
+    recreateWhen: "always"
 }
