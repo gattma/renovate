@@ -1,7 +1,7 @@
 #!/bin/bash
 
 branchName=$1
-oldVersion=$2
+currentVersion=$2
 newVersion=$3
 newMajorMinor=$4
 platform=$5
@@ -12,5 +12,5 @@ echo $
 
 if [ "$branchName" = "renovate/major-quarkus.platform.version" ]; then
   echo "Branch: $branchName; Old version: $oldVersion; New MajorMinorVersion: $newMajorMinor"
-  /tmp/renovate/repos/$platform/$repository/mvnw -f /tmp/renovate/repos/$platform/$repository/pom.xml io.quarkus.platform:quarkus-maven-plugin:$newVersion:update
+  /tmp/renovate/repos/$platform/$repository/mvnw -f /tmp/renovate/repos/$platform/$repository/pom.xml io.quarkus.platform:quarkus-maven-plugin:$newVersion:update -Dquarkus.platform.version=$currentVersion
 fi
