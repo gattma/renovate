@@ -14,5 +14,7 @@ echo $
 if [[ "$branchName" =~ renovate/.*quarkus.platform.version ]]; then
   echo "Branch: $branchName; Old version: $oldVersion; New MajorMinorVersion: $newMajorMinor"
   mvn versions:set-property -Dproperty=quarkus.platform.version -DnewVersion=$currentVersion
+  cat pom.xml | grep quarkus.platform.version
   /tmp/renovate/repos/$platform/$repository/mvnw -f /tmp/renovate/repos/$platform/$repository/pom.xml io.quarkus.platform:quarkus-maven-plugin:$newVersion:update
+  cat pom.xml | grep quarkus.platform.version
 fi
