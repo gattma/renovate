@@ -13,7 +13,7 @@ echo $
 
 if [[ "$branchName" =~ renovate/.*quarkus.platform.version ]]; then
   echo "Branch: $branchName; Old version: $oldVersion; New MajorMinorVersion: $newMajorMinor"
-  mvn versions:set-property -Dproperty=quarkus.platform.version -DnewVersion=$currentVersion
+  mvn versions:set-property -Dproperty=quarkus.platform.version -DnewVersion=$newVersion
   echo "POM:"
   cat /tmp/renovate/repos/$platform/$repository/pom.xml
   echo "cat pom.xml"
