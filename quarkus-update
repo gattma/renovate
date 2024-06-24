@@ -17,7 +17,7 @@ if [[ "$branchName" =~ renovate/.*quarkus.platform.version ]]; then
   echo "POM:"
   cat /tmp/renovate/repos/$platform/$repository/pom.xml
   echo "cat pom.xml"
-  /tmp/renovate/repos/$platform/$repository/mvnw -f /tmp/renovate/repos/$platform/$repository/pom.xml io.quarkus.platform:quarkus-maven-plugin:$newVersion:update
+  # /tmp/renovate/repos/$platform/$repository/mvnw -f /tmp/renovate/repos/$platform/$repository/pom.xml io.quarkus.platform:quarkus-maven-plugin:$newVersion:update
   cat /tmp/renovate/repos/$platform/$repository/pom.xml
   echo "cat pom.xml"
 fi
