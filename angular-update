@@ -7,9 +7,12 @@ newMajorMinor=$4
 platform=$5
 repository=$6
 
-
-echo $
-
 if [[ "$branchName" =~ "renovate/angular"* ]]; then
   echo "Branch: $branchName; Old version: $oldVersion; New MajorMinorVersion: $newMajorMinor"
+  currentVersion=$oldVersion
+  npm install
+  while [ $currentVersion -lt $newVersion ] ; do
+    currentVersion=`expr $currentVersion + 1`
+    ng update @angular/core@$currentVersion @angular/cli@$currentVersion --allow-dirty
+  done
 fi
