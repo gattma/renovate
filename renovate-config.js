@@ -11,7 +11,9 @@ module.exports = {
         executionMode: "branch"
     },
     allowedPostUpgradeCommands: [
-        "^/github-action/quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}} {{platform}} {{repository}}$"
+        "^/github-action/quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}} {{platform}} {{repository}}$",
+        "^npm ci --ignore-scripts$",
+        "^npx ng update {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --migrate-only --allow-dirty --force$"
     ],
     recreateWhen: "always"
 }
