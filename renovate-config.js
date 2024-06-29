@@ -4,6 +4,14 @@ module.exports = {
     repositories: [
         "Gepardec/renovate-angular-playground"
     ],
+    postUpgradeTasks: {
+        commands: ["touch test.txt"],
+        fileFilters: ["**/*", "**/.*"],
+        executionMode: "branch"
+    },
+    allowedPostUpgradeCommands: [
+        "touch"
+    ],
     prHourlyLimit: 0,
     recreateWhen: "always"
 }
