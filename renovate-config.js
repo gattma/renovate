@@ -2,17 +2,18 @@ module.exports = {
     gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
     platform: 'github',
     repositories: [
-        "Gepardec/renovate-playground",
-        "Gepardec/renovate-angular-playground"
+        "Gepardec/renovate-playground"
+        // "Gepardec/renovate-angular-playground"
     ],
     prHourlyLimit: 0,
-    postUpgradeTasks: {
+    /*postUpgradeTasks: {
         commands: ["/github-action/quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}} {{platform}} {{repository}}"],
-        fileFilters: ["**/*", "**/.*"],
+        fileFilters: ["** /*", "** /.*"],
         executionMode: "branch"
     },
     allowedPostUpgradeCommands: [
         "^/github-action/quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}} {{platform}} {{repository}}$"
     ],
-    recreateWhen: "always"
+    recreateWhen: "always"*/
+    baseBranches: ["test/docker-digest"]
 }
