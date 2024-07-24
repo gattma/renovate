@@ -19,5 +19,8 @@ module.exports = {
     ],
     recreateWhen: "always"*/
     baseBranches: ["test/docker-digest"],
-    pinDigests: "true"
+    pinDigests: "true",
+    kubernetes: {
+        "fileMatch": ["\\.yaml$"]
+    }
 }
