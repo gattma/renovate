@@ -2,7 +2,8 @@ module.exports = {
     gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
     platform: 'github',
     repositories: [
-        "Gepardec/renovate-playground"
+        "Gepardec/renovate-playground",
+        "gattma/argo-test"
         // "Gepardec/renovate-angular-playground"
     ],
     prHourlyLimit: 0,
@@ -17,5 +18,6 @@ module.exports = {
         "^npx ng update {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --migrate-only --allow-dirty --force$"
     ],
     recreateWhen: "always"*/
-    baseBranches: ["test/docker-digest"]
+    baseBranches: ["test/docker-digest"],
+    pinDigests: "true"
 }
