@@ -20,7 +20,7 @@ activate "Build-Pipeline"
 "Build-Pipeline" --> "Git Repository" : Build erfolgreich
 deactivate "Build-Pipeline"
 
-"Git Repository" --> Entwickler : Entwickler merged Pull Request
+Entwickler -> "Git Repository" : Entwickler merged Pull Request
 deactivate "Git Repository"
 activate Entwickler
 deactivate Entwickler

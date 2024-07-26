@@ -22,19 +22,21 @@ activate "Dev Space"
 "Build-Pipeline" --> "Git Repository" : erstellt Kommentar im Pull Request mit DevSpace-URL
 deactivate "Build-Pipeline"
 
-"Git Repository" --> Entwickler : notifiziert Entwickler über DevSpace
+"Git Repository" --> Entwickler : wird notifiziert
 activate Entwickler
-Entwickler -> "Git Repository" : fixt und pusht Code
+Entwickler -> "Dev Space" : fixt und pusht Code
 deactivate Entwickler
 
-"Git Repository" --> "Build-Pipeline" : git push triggert Build-Pipeline
+"Dev Space" --> "Git Repository" : pusht Code
+
+"Git Repository" -> "Build-Pipeline" : git push triggert Build-Pipeline
 activate "Build-Pipeline"
 "Build-Pipeline" --> "Git Repository" : Build erfolgreich
 deactivate "Build-Pipeline"
-"Git Repository" -> "Dev Space" : löscht DevSpace
+"Git Repository" --> "Dev Space" : löscht DevSpace
 deactivate "Dev Space"
 
-"Git Repository" --> Entwickler : Entwickler merged Pull Request
+Entwickler -> "Git Repository" : Entwickler merged Pull Request
 activate Entwickler
 deactivate Entwickler
 
