@@ -11,7 +11,7 @@ activate OpenRewrite
 OpenRewrite --> Renovate : Ändert Code
 deactivate OpenRewrite
 
-Renovate -> "Git Repository" : pusht Änderungen und erstellt Merge Request
+Renovate -> "Git Repository" : pusht Änderungen und erstellt Pull Request
 deactivate Renovate
 activate "Git Repository"
 

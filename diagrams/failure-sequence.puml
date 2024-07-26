@@ -11,7 +11,7 @@ activate OpenRewrite
 OpenRewrite --> Renovate : Ändert Code
 deactivate OpenRewrite
 
-Renovate -> "Git Repository" : pusht Änderungen und erstellt Merge Request
+Renovate -> "Git Repository" : pusht Änderungen und erstellt Pull Request
 deactivate Renovate
 activate "Git Repository"
 
@@ -24,10 +24,10 @@ deactivate "Build-Pipeline"
 
 "Git Repository" --> Entwickler : wird notifiziert
 activate Entwickler
-Entwickler -> "Dev Space" : fixt und pusht Code
+Entwickler -> "Dev Space" : öffnet Remote Workspace
 deactivate Entwickler
 
-"Dev Space" --> "Git Repository" : pusht Code
+"Dev Space" --> "Git Repository" : fixt und pusht Änderungen
 
 "Git Repository" -> "Build-Pipeline" : git push triggert Build-Pipeline
 activate "Build-Pipeline"
