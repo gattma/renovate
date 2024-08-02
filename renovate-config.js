@@ -3,11 +3,11 @@ module.exports = {
     platform: 'github',
     repositories: [
         "Gepardec/renovate-playground",
-        "gattma/argo-test"
+        // "gattma/argo-test"
         // "Gepardec/renovate-angular-playground"
     ],
     prHourlyLimit: 0,
-    /*postUpgradeTasks: {
+    postUpgradeTasks: {
         commands: ["/github-action/quarkus-update {{branchName}} {{currentVersion}} {{newVersion}} {{newMajor}}.{{newMinor}} {{platform}} {{repository}}"],
         fileFilters: ["** /*", "** /.*"],
         executionMode: "branch"
@@ -17,7 +17,7 @@ module.exports = {
         "^npm ci --ignore-scripts$",
         "^npx ng update {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --migrate-only --allow-dirty --force$"
     ],
-    recreateWhen: "always"*/
+    recreateWhen: "always",
     baseBranches: ["test/docker-digest"],
     pinDigests: "true",
     kubernetes: {
