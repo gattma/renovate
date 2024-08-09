@@ -1,44 +1,49 @@
 @startuml
 box A new Hope - failure
-participant Entwickler
+participant Developer
 
 participant Renovate
 
-Renovate -> OpenRewrite : erkennt neue Version und führt OpenRewrite aus
+Renovate -> OpenRewrite : recognizes new version and executes OpenRewrite
 activate Renovate
 activate OpenRewrite
 
-OpenRewrite --> Renovate : Ändert Code
+OpenRewrite --> Renovate : makes code changes
 deactivate OpenRewrite
 
-Renovate -> "Git Repository" : pusht Änderungen und erstellt Pull Request
+Renovate -> "Git Repository" : pushes code changes and creates Pull Request
 deactivate Renovate
 activate "Git Repository"
 
-"Git Repository" -> "Build-Pipeline" : git push triggert Build-Pipeline
+"Git Repository" -> "Build-Pipeline" : git push triggers Build-Pipeline
 activate "Build-Pipeline"
-"Build-Pipeline" --> "Dev Space" : Build-Pipeline bricht und erstellt DevSpace
-activate "Dev Space"
-"Build-Pipeline" --> "Git Repository" : erstellt Kommentar im Pull Request mit DevSpace-URL
+"Build-Pipeline" --> "Build-Pipeline" : fails
+"Build-Pipeline" -> "Git Repository" : creates comment in Pull Request with DevSpace-URL
 deactivate "Build-Pipeline"
 
-"Git Repository" --> Entwickler : wird notifiziert
-activate Entwickler
-Entwickler -> "Dev Space" : öffnet Remote Workspace
-deactivate Entwickler
+"Git Repository" --> Developer : gets notified
+activate Developer
+Developer -> DevSpace : creates and opens DevSpace
+deactivate Developer
+activate DevSpace
 
-"Dev Space" --> "Git Repository" : fixt und pusht Änderungen
+DevSpace -> "Git Repository" : fixes and pushes code changes
 
-"Git Repository" -> "Build-Pipeline" : git push triggert Build-Pipeline
+"Git Repository" -> "Build-Pipeline" : git push triggers Build-Pipeline
 activate "Build-Pipeline"
-"Build-Pipeline" --> "Git Repository" : Build erfolgreich
+"Build-Pipeline" --> "Git Repository" : Build successful
 deactivate "Build-Pipeline"
-"Git Repository" --> "Dev Space" : löscht DevSpace
-deactivate "Dev Space"
 
-Entwickler -> "Git Repository" : Entwickler merged Pull Request
-activate Entwickler
-deactivate Entwickler
+"Git Repository" -> Developer : notifies
+activate Developer
+
+Developer -> DevSpace : deletes DevSpace
+deactivate DevSpace
+
+
+
+Developer -> "Git Repository" : merges Pull Request
+deactivate Developer
 
 deactivate "Git Repository"
 
