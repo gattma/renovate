@@ -31,7 +31,8 @@ DevSpace -> "Git Repository" : fixes and pushes code changes
 
 "Git Repository" -> "Build-Pipeline" : git push triggers Build-Pipeline
 activate "Build-Pipeline"
-"Build-Pipeline" --> "Git Repository" : Build successful
+"Build-Pipeline" --> "Build-Pipeline" : successful
+"Build-Pipeline" --> "Git Repository" :
 deactivate "Build-Pipeline"
 
 "Git Repository" -> Developer : notifies
