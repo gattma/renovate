@@ -1,0 +1,31 @@
+name: onboard-repo
+
+on:
+  workflow_dispatch:
+    inputs:
+      repoName:
+        description: 'Name of the repo'
+        required: true
+      repoOrgUser:
+        description: 'Name of the Organization/User'
+        required: true
+
+jobs:
+  onboard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Append new repository
+        run: |
+          sed -i '/repositories: \[/,/\]/ s/^\(\s*\]\)/         "{{ github.event.inputs.repoOrgUser }}\/{{ github.event.inputs.repoName }}",\n\1/' renovate-config.js
+
+      - name: Commit
+        run: |
+          git config --global user.name 'onboard repo action'
+          git config --global user.email 'onboard.repo@action.com'
+          git commit -am "Onboarded new repository '${{ github.event.inputs.repoOrgUser }}/{{ github.event.inputs.repoName }}'"
+          git push
+
+      
