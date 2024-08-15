@@ -4,6 +4,7 @@ module.exports = {
     repositories: [
         "Gepardec/renovate-playground",
         // "Gepardec/renovate-angular-playground"
+         "{{ github.event.inputs.repoOrgUser }}/{{ github.event.inputs.repoName }}",
     ],
     prHourlyLimit: 0,
     recreateWhen: "always"
