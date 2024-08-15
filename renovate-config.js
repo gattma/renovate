@@ -6,6 +6,7 @@ module.exports = {
         // "Gepardec/renovate-angular-playground"
          "gattma/argo-test",
          "gattma/argo-tests^",
+         "gattma/argo-tests",
     ],
     prHourlyLimit: 0,
     recreateWhen: "always"
