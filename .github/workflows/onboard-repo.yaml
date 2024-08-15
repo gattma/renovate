@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false
 
       - name: Append new repository
         run: |
@@ -29,6 +31,11 @@ jobs:
           git config --global user.name 'onboard repo action'
           git config --global user.email 'onboard.repo@action.com'
           git commit -am "Onboarded new repository '${{ github.event.inputs.repoOrgUser }}/${{ github.event.inputs.repoName }}'"
-          git push
+
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.RENOVATE_TOKEN }}
+          branch: ${{ github.ref }}
 
       
