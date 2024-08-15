@@ -1,4 +1,4 @@
-name: onboard-repo
+run-name: onboard repo ${{ github.event.inputs.repoOrgUser }}/${{ github.event.inputs.repoName }}
 
 on:
   workflow_dispatch:
