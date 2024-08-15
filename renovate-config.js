@@ -4,7 +4,7 @@ module.exports = {
     repositories: [
         "Gepardec/renovate-playground",
         // "Gepardec/renovate-angular-playground"
-         "gattma/argo-tests",
+        
     ],
     prHourlyLimit: 0,
     recreateWhen: "always"
