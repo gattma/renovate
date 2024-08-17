@@ -7,6 +7,7 @@ module.exports = {
          "gattma/argo-test",
          "gattma/SolrSearch",
          "gattma/SolrSearch-CI",
+         "gattma/gepardemy",
     ],
     prHourlyLimit: 0,
     recreateWhen: "always"
