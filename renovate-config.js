@@ -8,6 +8,7 @@ module.exports = {
          "gattma/SolrSearch",
          "gattma/SolrSearch-CI",
          "gattma/gepardemy",
+         "gattma/gepardemy",
     ],
     prHourlyLimit: 0,
     recreateWhen: "always"
